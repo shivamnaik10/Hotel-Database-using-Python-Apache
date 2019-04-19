@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Select your Room</title>
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Full-width input fields */
+input[type=text]] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus :focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity:1;
+}
+
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Clear floats */
+.buttons::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
+</head>
+<body>
+   <div class="modal">
+  <form class="modal-content" method="POST" action="http://localhost/cgi-bin/Room.py">>
+    <div class="container">
+      <h1>Check for Room</h1>
+      <p>Please fill in the details to check availability of the rooms.</p>
+      <hr>
+        <label for="arrive">Arrive</label>
+        <input type="date" id="arrive" name="arrive" value="<?php echo date('Y-m-d'); ?>"><br><br><br>
+
+        <label for="depart">Depart</label>
+        <input type="date" id="depart" name="depart" value="<?php echo date('Y-m-d'); ?>" /><br><br><br>
+
+        <label>Number of Persons</label>
+        <select name="person">
+          <option value="blank"></option>
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select><br><br><br>
+
+        <label>Room Type</label>
+        <select name="room_type">
+        <option value="blank"></option>
+        <option value="Executive Suite" selected>Executive Suite</option>
+        <option value="Deluxe Suite">Deluxe Suite</option>
+        <option value="Family Room">Family Room</option>
+      </select><br><br>
+
+      <label>Room Number</label>
+        <select name="room_number">
+        <option value="blank"></option>
+        <option value="Executive Suite 01" >Executive Suite 01</option>
+        <option value="Executive Suite 02" >Executive Suite 02</option>
+        <option value="Executive Suite 03" >Executive Suite 03</option>
+        <option value="Executive Suite 04" >Executive Suite 04</option>
+        <option value="Executive Suite 05" >Executive Suite 05</option>
+        <option value="Deluxe Suite 01">Deluxe Suite 01</option>
+        <option value="Deluxe Suite 02">Deluxe Suite 02</option>
+        <option value="Deluxe Suite 03">Deluxe Suite 03</option>
+        <option value="Deluxe Suite 04">Deluxe Suite 04</option>
+        <option value="Deluxe Suite 05">Deluxe Suite 05</option>
+        <option value="Family Room 01">Family Room 01</option>
+        <option value="Family Room 02">Family Room 02</option>
+        <option value="Family Room 03">Family Room 03</option>
+        <option value="Family Room 04">Family Room 04</option>
+        <option value="Family Room 05">Family Room 05</option>
+      </select><br><br>
+
+      <label for="phone"><b>Phone Number</b></label>
+      <input type="text" placeholder="Enter phone number" name="phone" id="phone" required><br><br><br>
+
+
+      <div class="buttons">
+          <button type="submit">Check for availability</button>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
